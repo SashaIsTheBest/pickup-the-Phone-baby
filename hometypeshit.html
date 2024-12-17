@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@keyframes pan {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 100px; /* Adjust the distance for speed/direction */
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-gap: 40px; /* Increased gap between boxes */
+  justify-content: center;
+  margin-top: -300px; /* Adjust top margin to move boxes down */
+  margin-left: 1250px; /* Adjust top margin to move boxes down */
+}
+
+#rcorners1 {
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 20px; 
+  width: 350px;
+  height: 400px;  
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+#topRectangle {
+  position: fixed; /* Sticks to the top of the screen */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the screen */
+  height: 50px; /* Taskbar height */
+  background-color: #3e455b; /* Taskbar color */
+  z-index: 1000; /* Ensures it stays on top of other elements */
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Space between logo and center buttons */
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+#logo {
+  height: 50px; /* Increased size of the logo */
+}
+
+#taskbarCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px; /* Spacing between buttons */
+}
+
+button {
+  background-color: #3e455b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none; /* Ensure links look like buttons */
+  margin-bottom: 0px; /* Space below the button */
+}
+
+button:hover {
+  background-color: #50597b; /* Lighter hover effect */
+}
+
+.price {
+  font-size: 18px;
+  color: #1c1f29;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background-size: 20px 20px;
+  background-color: #1c1f29; 
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 2px, rgba(0, 0, 0, 0) 2px);
+  animation: pan 10s linear infinite; /* Pan animation */
+  font-family: 'Nunito', sans-serif; /* Apply Nunito font */
+}
+
+.pc-image {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  margin-top: -30px; /* Move the image up */
+}
+
+#slogan {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 250px;
+  margin-left: -400px;
+  color: white;
+}
+
+#slogan-subtext {
+  font-size: 1em;
+  text-align: left;
+  margin-top: 10px;
+  margin-left: -500px;
+  color: white;
+  max-width: 800px; /* Ensure text wraps properly */
+  word-wrap: break-word; /* Ensure long words wrap */
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Top Taskbar Rectangle -->
+<div id="topRectangle">
+  <!-- Logo in the top left -->
+  <a href="https://example.com">
+    <img id="logo" src="a1h2 logo white.png" alt="Logo" />
+  </a>
+  
+  <!-- Centered Buttons -->
+  <div id="taskbarCenter">
+    <button onclick="window.location.href='https://example.com';">Shop</button>
+    <button onclick="window.location.href='https://example.com';">FAQ</button>
+    <button onclick="window.location.href='https://example.com';">About Me</button>
+  </div>
+</div>
+
+<!-- Slogan -->
+<div id="slogan">
+  🥢UNBEATABLE pc's, UNBEATABLE prices, with A1H2🥏
+</div>
+
+<!-- Slogan Subtext -->
+<div id="slogan-subtext">
+  Why get your pc with us?<br>
+  <br>
+  With a1h2, my only goal is to provide cheap, afforable, but high preforming computers, that can get you playing games or doing what you need to do, fast and cheap. I personaly think that the entry level to play games should be as low as possible, but getting that bar so low for normal people that arent super interested in computers is hard, witch is why my goal is for someone that cant build and tinker with computers themselves to be able to get up and using high preformance computers fast.
+</div>
+
+<div class="grid-container">
+  <div id="rcorners1" onclick="window.location.href='https://example.com';">
+    <!-- Forward Button -->
+    <button onclick="event.stopPropagation(); window.location.href='https://buy.stripe.com/6oEg2iboA9JO9uEbII';">buy</button>
+    
+    <!-- Price Below Button -->
+    <p class="price">i5-19000k | 1060 TI | $259</p>
+    
+    <!-- Image from uploaded file -->
+    <img class="pc-image" src="pc one.png" alt="PC One" />
+  </div>
+  <!-- Add more boxes as needed -->
+</div>
+
+</body>
+</html>
