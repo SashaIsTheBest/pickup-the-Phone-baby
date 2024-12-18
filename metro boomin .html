@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@keyframes rainbow {
+  0% { color: #ff0000; }
+  15% { color: #ff7f00; }
+  30% { color: #ffff00; }
+  45% { color: #00ff00; }
+  60% { color: #0000ff; }
+  75% { color: #4b0082; }
+  90% { color: #8b00ff; }
+  100% { color: #ff0000; }
+}
+
+.rainbow-text {
+  display: inline-block;
+  animation: rainbow 3s linear infinite;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1c1f29;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 2px, rgba(0, 0, 0, 0) 2px);
+  background-size: 20px 20px;
+  animation: pan 10s linear infinite; /* Pan animation */
+}
+
+@keyframes pan {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 100px; /* Adjust the distance for speed/direction */
+  }
+}
+
+#topRectangle {
+  position: fixed; /* Sticks to the top of the screen */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the screen */
+  height: 50px; /* Taskbar height */
+  background-color: #3e455b; /* Taskbar color */
+  z-index: 1000; /* Ensures it stays on top of other elements */
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Space between logo and center buttons */
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+#logo {
+  height: 50px; /* Increased size of the logo */
+}
+
+#taskbarCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px; /* Spacing between buttons */
+}
+
+button {
+  background-color: #3e455b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none; /* Ensure links look like buttons */
+  margin-bottom: 0px; /* Space below the button */
+}
+
+button:hover {
+  background-color: #50597b; /* Lighter hover effect */
+}
+
+.container {
+  text-align: left;
+  margin-top: 70px; /* Adjust to accommodate the taskbar height */
+  padding: 20px;
+  max-width: 800px;
+  color: white;
+}
+
+h2 {
+  color: #3e455b;
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Top Taskbar Rectangle -->
+<div id="topRectangle">
+  <!-- Logo in the top left -->
+  <a href="https://example.com">
+    <img id="logo" src="a1h2 logo white.png" alt="Logo" />
+  </a>
+  
+  <!-- Centered Buttons -->
+  <div id="taskbarCenter">
+    <button onclick="window.location.href='https://example.com';">Shop</button>
+    <button onclick="window.location.href='https://example.com';">FAQ</button>
+    <button onclick="window.location.href='https://example.com';">About Me</button>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Frequently Asked Questions (FAQ)</h2>
+
+  <h3>Q. How are these computers these prices?</h3>
+  <p>A. Basically, i buy cheaper, maybe used or refurbished office computers and upgrade them to be great capable gaming computers.</p>
+
+  <h3>Q. Im buying a computer. Can it play "Game name"?</h3>
+  <p>A. Everytime i make a computer, on the page (that you can access by clicking on a product) I put a video of me playing the 10 most popular games, such as fortnite, csgo, cyberpunk, gta, etc. These games will let you get a feel for if the preformance of that computer would be adequate for your wants or use cases.</p>
+
+  <h3>Q. Where do you ship?</h3>
+  <p>A. Australia, New Zealand, United States (high shipping costs to the us thou)</p>
+
+  <h3>Q. Do you offer customer support?</h3>
+  <p><span class="rainbow-text">support@a1h2.com</span></p>
+
+  <h3>Q. Whats the warrenty?</h3>
+  <p>A. It comes with a default 12 month warrenty, that ONLY covers any problems that are not caused by the customer. Warrenty is void if any modifications are made that majorly impact the computer (such as new cpu, gpu, ram, etc). If Your warrenty is expired or void, We will fix your PC but you will have to pay repair fees. </p>    
+
+  <h3>Q. How long will it take untill it arrives?</h3>
+  <p>A. Around 1-4 weeks. It's very varied because some of them i will have just avaliable on hand, some parts i will have to order, and wait for them to arrive to me. Shipping time can be different for everyone.</p>  
+  
+  <h3>Q. My question isnt listed here</h3>
+  <p><span class="rainbow-text">Support@a1h2.com</span></p>   
+</div>
+</body>
+</html>
